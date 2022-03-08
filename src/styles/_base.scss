@@ -1,0 +1,44 @@
+@use './helpers' as h;
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap');
+
+:root {
+  --color-primary-white: hsl(204, 100%, 97%);
+  --color-primary-black: hsl(204, 37%, 15%);
+  --color-blue1: hsl(202, 51%, 17%);
+  --color-blue2: hsl(205, 52%, 25%);
+  --color-orange: hsl(39, 100%, 50%);
+  --color-yellow: hsl(45, 100%, 55%);
+  --color-brown: hsl(31, 68%, 62%);
+
+  --color-yellow-alpha1: hsla(45, 100%, 55%, 0.3);
+  --color-yellow-alpha2: hsla(45, 100%, 55%, 0.8);
+  --color-bg-blue: hsl(204, 100%, 97%);
+  --color-bg-yellow: hsl(46, 100%, 95%);
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: 'Raleway', 'Helvetica', 'Arial', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-primary-black);
+  background-image: linear-gradient(
+    180deg,
+    var(--color-bg-yellow) 0%,
+    var(--color-bg-blue) 100%
+  );
+
+  @include h.media-bp-down(h.$sm) {
+    font-size: 18px;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

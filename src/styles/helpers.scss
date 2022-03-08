@@ -1,0 +1,11 @@
+$xl: 1399px;
+$lg: 1199px;
+$md: 991px;
+$sm: 767px;
+$xs: 575px;
+
+@mixin media-bp-down($bp) {
+  @media (max-width: $bp) {
+    @content;
+  }
+}

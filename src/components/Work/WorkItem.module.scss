@@ -1,0 +1,228 @@
+@use '../../styles/helpers' as h;
+
+$_duration: 0.3s;
+
+.preview {
+  overflow: hidden;
+  position: relative;
+  transition: 0.1s transform;
+
+  &:hover {
+    z-index: 10;
+
+    &:before {
+      opacity: 1;
+    }
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-yellow-alpha1);
+  transform: translate3d(0, 100%, 0);
+}
+
+:global(.mobile) .overlay,
+:global(.tablet) .overlay {
+  transform: translate3d(0, 0, 0);
+  background-color: transparent;
+}
+
+.imagePreview {
+  cursor: pointer;
+}
+
+.linkPreview {
+  display: block;
+  width: 100%;
+  flex-grow: 1;
+  font-size: 0;
+}
+
+.tags {
+  padding: 0 10px;
+  color: var(--color-black);
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+.linkWebsite,
+.linkGithub {
+  box-sizing: content-box;
+  width: 24px;
+  padding: 0px 10px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  padding: 10px 0;
+  background-color: var(--color-yellow-alpha2);
+}
+
+.overlay.inTop {
+  animation: inTop $_duration forwards;
+}
+
+.overlay.inBottom {
+  animation: inBottom $_duration forwards;
+}
+
+.overlay.inLeft {
+  animation: inLeft $_duration forwards;
+}
+
+.overlay.inRight {
+  animation: inRight $_duration forwards;
+}
+
+.overlay.outTop {
+  animation: outTop $_duration forwards;
+}
+
+.overlay.outBottom {
+  animation: outBottom $_duration forwards;
+}
+
+.overlay.outLeft {
+  animation: outLeft $_duration forwards;
+}
+
+.overlay.outRight {
+  animation: outRight $_duration forwards;
+}
+
+// ----- in -----
+
+@keyframes inTop {
+  0% {
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes inBottom {
+  0% {
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes inLeft {
+  0% {
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes inRight {
+  0% {
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+// ----- out -----
+
+@keyframes outTop {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes outBottom {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes outLeft {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes outRight {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+// ----- grid -----
+
+@for $i from 1 through 3 {
+  .item:nth-child(7n + #{$i}) {
+    flex: 0 0 auto;
+    width: 33.33%;
+  }
+}
+
+@for $i from 4 through 7 {
+  .item:nth-child(7n + #{$i}) {
+    flex: 0 0 auto;
+    width: 25%;
+  }
+}
+
+@for $i from 1 through 2 {
+  .item:nth-child(5n + #{$i}) {
+    flex: 0 0 auto;
+
+    @include h.media-bp-down(h.$md) {
+      width: 50%;
+    }
+
+    @include h.media-bp-down(h.$xs) {
+      width: 100%;
+    }
+  }
+}
+
+@for $i from 3 through 5 {
+  .item:nth-child(5n + #{$i}) {
+    flex: 0 0 auto;
+
+    @include h.media-bp-down(h.$md) {
+      width: 33.33%;
+    }
+
+    @include h.media-bp-down(h.$sm) {
+      width: 50%;
+    }
+
+    @include h.media-bp-down(h.$xs) {
+      width: 100%;
+    }
+  }
+}

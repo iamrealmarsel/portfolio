@@ -1,0 +1,22 @@
+.container {
+  width: 100%;
+  max-width: 1390px;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.workList {
+  --gutter: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(var(--gutter) / -2);
+  margin-right: calc(var(--gutter) / -2);
+  margin-top: calc(var(--gutter) * -1);
+
+  > * {
+    padding-left: calc(var(--gutter) / 2);
+    padding-right: calc(var(--gutter) / 2);
+    margin-top: var(--gutter);
+  }
+}

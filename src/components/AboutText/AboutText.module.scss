@@ -1,0 +1,26 @@
+.container {
+  width: 100%;
+  max-width: 1390px;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  max-width: 758px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.link img {
+  margin-right: 5px;
+  width: 24px;
+}
+
+.text {
+  margin-bottom: 10px;
+}
