@@ -1,0 +1,27 @@
+.container {
+  width: 100%;
+  max-width: 1390px;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  // margin-bottom: 10px;
+}
+
+.tags {
+}
+
+.tag {
+  line-height: 1;
+  background-color: transparent;
+  border: dashed 1px var(--color-blue2);
+  padding: 6px 20px;
+  margin-right: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.active {
+  background-color: var(--color-blue2);
+  color: var(--color-primary-white);
+}
