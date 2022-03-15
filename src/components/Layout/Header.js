@@ -23,7 +23,7 @@ function Header() {
         {navigation.about.name}
       </NavLink>
       <a
-        href='https://github.com/iamrealmarsel/marsel.one'
+        href='https://github.com/iamrealmarsel/portfolio'
         className={cn.logoGithub}
         target='_blank'
         rel='noreferrer'

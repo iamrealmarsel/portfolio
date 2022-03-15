@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react';
 import { getTags, getWorkByTags } from '../../store/selectors';
 import WorkContext from '../../store/WorkContext';
-import Tags from '../Tags';
+import Tags from './Tags';
 import WorkItem from './WorkItem';
 import cn from './WorkList.module.scss';
 
