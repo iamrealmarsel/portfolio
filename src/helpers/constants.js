@@ -3,6 +3,9 @@ export const navigation = {
     name: 'Work',
     path: '/',
   },
+  workCard: {
+    path: '/work',
+  },
   about: {
     name: 'About',
     path: '/about',

@@ -1,4 +1,6 @@
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
+import { navigation } from '../../helpers/constants';
 import { isMobile } from '../../helpers/utilities';
 import cn from './WorkItem.module.scss';
 
@@ -12,14 +14,10 @@ const getDirection = (event, { width, height, x, y }) => {
   const mousePreviewCenterY =
     (event.clientY - y - height / 2) * (height > width ? width / height : 1);
 
-  return (
-    Math.round(
-      Math.atan2(mousePreviewCenterY, mousePreviewCenterX) / 1.57079633 + 5
-    ) % 4
-  );
+  return Math.round(Math.atan2(mousePreviewCenterY, mousePreviewCenterX) / 1.57079633 + 5) % 4;
 };
 
-const WorkItem = ({ url, srcPreview, urlGithub, tags }) => {
+const WorkItem = ({ url, srcPreview, urlGithub, tags, pathDescription }) => {
   const previewRef = useRef(null);
   const overlayRef = useRef(null);
   let previewElement = null;
@@ -31,10 +29,7 @@ const WorkItem = ({ url, srcPreview, urlGithub, tags }) => {
   });
 
   const handleWrapperPreviewMouseEnter = (event) => {
-    const direction = getDirection(
-      event,
-      previewElement.getBoundingClientRect()
-    );
+    const direction = getDirection(event, previewElement.getBoundingClientRect());
     overlayElement.classList.remove(...directionsOut);
     overlayElement.classList.add(directionsIn[direction]);
   };
@@ -42,10 +37,7 @@ const WorkItem = ({ url, srcPreview, urlGithub, tags }) => {
   const handleWrapperPreviewMouseLeave = (event) => {
     previewElement.style.transform = `scale(1) perspective(1000px) rotateY(0) rotateX(0)`;
 
-    const direction = getDirection(
-      event,
-      previewElement.getBoundingClientRect()
-    );
+    const direction = getDirection(event, previewElement.getBoundingClientRect());
     overlayElement.classList.remove(...directionsIn);
     overlayElement.classList.add(directionsOut[direction]);
   };
@@ -72,39 +64,35 @@ const WorkItem = ({ url, srcPreview, urlGithub, tags }) => {
           ref={previewRef}
           onMouseMove={isMobile() ? null : handleWrapperPreviewMouseMove}
         >
-          <img
-            className={cn.imagePreview}
-            src={`img/projects/${srcPreview}`}
-            alt='project'
-          />
+          <img className={cn.imagePreview} src={`img/projects/${srcPreview}`} alt='project' />
           <div className={cn.overlay} ref={overlayRef}>
-            <a
-              href={url}
-              className={cn.linkPreview}
-              target='_blank'
-              rel='noreferrer'
-            >
-              link
-            </a>
+            {pathDescription ? (
+              <Link
+                className={cn.linkPreview}
+                to={`${navigation.workCard.path}${pathDescription}`}
+              />
+            ) : (
+              <a className={cn.linkPreview} href={url} target='_blank' rel='noreferrer'>
+                link
+              </a>
+            )}
             <div className={cn.info}>
               <div className={cn.tags}>{tags.join(', ')}</div>
               <div className={cn.icons}>
-                <a
-                  className={cn.linkWebsite}
-                  href={url}
-                  target='_blank'
-                  rel='noreferrer'
-                >
+                <a className={cn.linkWebsite} href={url} target='_blank' rel='noreferrer'>
                   <img src='img/icons/external-link.svg' alt='go to website' />
                 </a>
-                <a
-                  className={cn.linkGithub}
-                  href={urlGithub}
-                  target='_blank'
-                  rel='noreferrer'
-                >
+                <a className={cn.linkGithub} href={urlGithub} target='_blank' rel='noreferrer'>
                   <img src='img/icons/logo-github.svg' alt='go to github' />
                 </a>
+                {pathDescription && (
+                  <Link
+                    className={cn.linkDescription}
+                    to={`${navigation.workCard.path}${pathDescription}`}
+                  >
+                    <img src='img/icons/angle-right.svg' alt='go to description' />
+                  </Link>
+                )}
               </div>
             </div>
           </div>

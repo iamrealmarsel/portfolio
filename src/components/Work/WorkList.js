@@ -16,10 +16,7 @@ const WorkList = () => {
     if (index === -1) {
       setCurrentTags([...currentTags, tag]);
     } else {
-      setCurrentTags([
-        ...currentTags.slice(0, index),
-        ...currentTags.slice(index + 1),
-      ]);
+      setCurrentTags([...currentTags.slice(0, index), ...currentTags.slice(index + 1)]);
     }
   };
 
@@ -34,6 +31,7 @@ const WorkList = () => {
             srcPreview={workItem.srcPreview}
             urlGithub={workItem.urlGithub}
             tags={workItem.tags}
+            pathDescription={workItem.pathDescription}
           />
         ))}
       </div>

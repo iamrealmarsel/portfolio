@@ -47,7 +47,7 @@ $_duration: 0.3s;
 
 .tags {
   padding: 0 10px;
-  color: var(--color-black);
+  color: var(--color-primary-black);
 }
 
 .icons {
@@ -56,7 +56,8 @@ $_duration: 0.3s;
 }
 
 .linkWebsite,
-.linkGithub {
+.linkGithub,
+.linkDescription {
   box-sizing: content-box;
   width: 24px;
   padding: 0px 10px;
