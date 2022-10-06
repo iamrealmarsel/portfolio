@@ -5,21 +5,14 @@ const AboutText = () => {
     <div className={cn.container}>
       <p className={cn.text}>Hello, world! 👋</p>
       <p className={cn.text}>
-        I&apos;m Marsel and I like to study front-end development, design and
-        also English 😅
+        I&apos;m Marsel and I like to study front-end development, design and also English 😅
       </p>
       <p className={cn.text}>
-        I have experience with HTML, CSS, Sass, BEM, Javascript, React, React
-        Router, Redux, Canvas, GSAP, Email coding, Webpack, Gulp, Git, Figma,
-        Photoshop.
+        I have experience with HTML, CSS, Sass, BEM, Javascript, React, React Router, Redux, Canvas,
+        GSAP, Email coding, Webpack, Gulp, Git, Figma, Photoshop.
       </p>
       <p className={cn.text}>Get in touch 👇</p>
-      <a
-        className={cn.link}
-        href='https://t.me/iamrealmarsel'
-        target='_blank'
-        rel='noreferrer'
-      >
+      <a className={cn.link} href='https://t.me/iamrealmarsel' target='_blank' rel='noreferrer'>
         <img src='img/icons/logo-telegram.svg' alt='' />
         @iamrealmarsel
       </a>

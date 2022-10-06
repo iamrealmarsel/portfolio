@@ -2,6 +2,12 @@
 
 $_duration: 0.3s;
 
+.item {
+  &:hover {
+    z-index: 10;
+  }
+}
+
 .preview {
   overflow: hidden;
   position: relative;
@@ -45,9 +51,24 @@ $_duration: 0.3s;
   font-size: 0;
 }
 
+.info {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: var(--color-yellow-alpha2);
+}
+
+.info_bottom {
+  justify-content: flex-end;
+}
+
 .tags {
-  padding: 0 10px;
+  padding: 10px;
   color: var(--color-primary-black);
+  line-height: 24px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .icons {
@@ -59,17 +80,17 @@ $_duration: 0.3s;
 .linkGithub,
 .linkDescription {
   box-sizing: content-box;
-  width: 24px;
-  padding: 0px 10px;
-}
+  padding: 10px;
+  transition: background-color 0.15s;
 
-.info {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  width: 100%;
-  padding: 10px 0;
-  background-color: var(--color-yellow-alpha2);
+  &:hover {
+    background-color: var(--color-yellow);
+  }
+
+  img {
+    width: auto;
+    height: 24px;
+  }
 }
 
 .overlay.inTop {

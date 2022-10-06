@@ -1,0 +1,171 @@
+.container {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 30px 40px;
+  border: dashed 1px var(--color-blue2);
+  background-image: linear-gradient(180deg, var(--color-bg-blue) 0%, var(--color-bg-yellow) 100%);
+}
+
+.header {
+  margin-bottom: 30px;
+}
+
+.tags {
+  margin-bottom: 15px;
+}
+
+.tag {
+  padding: 5px 15px;
+  margin-right: 10px;
+  color: var(--color-primary-white);
+  background-color: var(--color-blue2);
+}
+
+.urls {
+  display: flex;
+  line-height: 1;
+  column-gap: 20px;
+}
+
+.deploy,
+.github {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    height: 24px;
+    margin-right: 10px;
+  }
+}
+
+.post {
+  h1 {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding: 5px 0;
+    margin-bottom: 20px;
+    color: var(--color-primary-white);
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 10px;
+      left: -10px;
+      right: -20px;
+      background-color: var(--color-orange);
+      z-index: -1;
+      animation: floatOver 20s infinite ease-in-out;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      bottom: 0;
+      left: -20px;
+      right: -10px;
+      background-color: var(--color-blue2);
+      z-index: -1;
+      animation: floatUnder 20s infinite ease-in-out;
+    }
+  }
+
+  h2 {
+    margin-bottom: 15px;
+    margin-top: 20px;
+  }
+
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 10px;
+    margin-top: 15px;
+  }
+
+  ol,
+  ul {
+    padding-left: 20px;
+    margin-bottom: 10px;
+  }
+
+  ul {
+    list-style: square;
+  }
+
+  ol {
+    list-style: decimal;
+  }
+
+  p {
+    margin-bottom: 15px;
+  }
+
+  a {
+    color: var(--color-orange);
+    text-decoration: underline;
+  }
+
+  img {
+    // margin: 15px 0;
+  }
+
+  code {
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: var(--color-blue1);
+    background-color: var(--color-orange-light);
+    font-size: 0.9em;
+  }
+
+  pre {
+    padding: 5px 15px;
+    border-radius: 3px;
+    background-color: var(--color-orange-light);
+    white-space: pre-wrap;
+
+    code {
+      padding: 0;
+      background-color: transparent;
+    }
+  }
+}
+
+@keyframes floatOver {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  25% {
+    transform: translate3d(-10px, 10px, 0);
+  }
+  50% {
+    transform: translate3d(-10px, 0, 0);
+  }
+  75% {
+    transform: translate3d(0, 10px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes floatUnder {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  25% {
+    transform: translate3d(10px, -10px, 0);
+  }
+  50% {
+    transform: translate3d(10px, 0, 0);
+  }
+  75% {
+    transform: translate3d(0, -10px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}

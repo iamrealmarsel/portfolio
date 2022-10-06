@@ -26,8 +26,8 @@ const WorkList = () => {
       <div className={cn.workList}>
         {taggedWorkList.map((workItem) => (
           <WorkItem
+            key={workItem.id}
             url={workItem.url}
-            key={workItem.url}
             srcPreview={workItem.srcPreview}
             urlGithub={workItem.urlGithub}
             tags={workItem.tags}

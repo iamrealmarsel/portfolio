@@ -36,7 +36,6 @@ const WorkItem = ({ url, srcPreview, urlGithub, tags, pathDescription }) => {
 
   const handleWrapperPreviewMouseLeave = (event) => {
     previewElement.style.transform = `scale(1) perspective(1000px) rotateY(0) rotateX(0)`;
-
     const direction = getDirection(event, previewElement.getBoundingClientRect());
     overlayElement.classList.remove(...directionsIn);
     overlayElement.classList.add(directionsOut[direction]);
@@ -46,7 +45,6 @@ const WorkItem = ({ url, srcPreview, urlGithub, tags, pathDescription }) => {
     const { width, height, x, y } = previewElement.getBoundingClientRect();
     const mouseProgressX = (event.clientX - (x + width / 2)) / (width / 2);
     const mouseProgressY = -(event.clientY - (y + height / 2)) / (height / 2);
-
     previewElement.style.transform = `scale(1.05) perspective(1000px) rotateY(${
       mouseProgressX * rotateDeg
     }deg) rotateX(${mouseProgressY * rotateDeg}deg)`;
@@ -55,7 +53,6 @@ const WorkItem = ({ url, srcPreview, urlGithub, tags, pathDescription }) => {
   return (
     <div className={cn.item}>
       <div
-        className={cn.wrapperPreview}
         onMouseEnter={isMobile() ? null : handleWrapperPreviewMouseEnter}
         onMouseLeave={isMobile() ? null : handleWrapperPreviewMouseLeave}
       >
@@ -64,8 +61,11 @@ const WorkItem = ({ url, srcPreview, urlGithub, tags, pathDescription }) => {
           ref={previewRef}
           onMouseMove={isMobile() ? null : handleWrapperPreviewMouseMove}
         >
-          <img className={cn.imagePreview} src={`img/projects/${srcPreview}`} alt='project' />
+          <img className={cn.imagePreview} src={`img/preview/${srcPreview}`} alt='project' />
           <div className={cn.overlay} ref={overlayRef}>
+            <div className={cn.info}>
+              <div className={cn.tags}>{tags.join(', ')}</div>
+            </div>
             {pathDescription ? (
               <Link
                 className={cn.linkPreview}
@@ -76,14 +76,13 @@ const WorkItem = ({ url, srcPreview, urlGithub, tags, pathDescription }) => {
                 link
               </a>
             )}
-            <div className={cn.info}>
-              <div className={cn.tags}>{tags.join(', ')}</div>
+            <div className={`${cn.info} ${cn.info_bottom}`}>
               <div className={cn.icons}>
-                <a className={cn.linkWebsite} href={url} target='_blank' rel='noreferrer'>
-                  <img src='img/icons/external-link.svg' alt='go to website' />
-                </a>
                 <a className={cn.linkGithub} href={urlGithub} target='_blank' rel='noreferrer'>
                   <img src='img/icons/logo-github.svg' alt='go to github' />
+                </a>
+                <a className={cn.linkWebsite} href={url} target='_blank' rel='noreferrer'>
+                  <img src='img/icons/external-link.svg' alt='go to website' />
                 </a>
                 {pathDescription && (
                   <Link

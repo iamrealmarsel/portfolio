@@ -1,17 +1,11 @@
-import { emailData } from './email';
-import { multiPageData } from './multiPage';
-import { onePageData } from './onePage';
-import { spaData } from './spa';
+import emailData from './email';
+import websitesData from './websites';
 
-const sortByDateDesc = (data1, data2) =>
-  Date.parse(data2.year) - Date.parse(data1.year);
+const sortByDateDesc = (data1, data2) => Date.parse(data2.year) - Date.parse(data1.year);
 
-const sortedWorkByDate = [...spaData, ...onePageData, ...multiPageData].sort(
-  sortByDateDesc
-);
+const sortedWebsitesByDate = websitesData.sort(sortByDateDesc);
+const sortedEmailWorkByDate = emailData.sort(sortByDateDesc);
 
-const sortedEmailWorkByDate = [...emailData].sort(sortByDateDesc);
-
-const workData = [...sortedWorkByDate, ...sortedEmailWorkByDate];
+const workData = [...sortedWebsitesByDate, ...sortedEmailWorkByDate];
 
 export default workData;
