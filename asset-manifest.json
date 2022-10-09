@@ -1,13 +1,30 @@
 {
   "files": {
-    "main.css": "/static/css/main.3be3d149.css",
-    "main.js": "/static/js/main.47f770e3.js",
+    "main.css": "/static/css/main.26708248.css",
+    "main.js": "/static/js/main.90596035.js",
+    "static/media/shelter-cozy-house.md": "/static/media/shelter-cozy-house.a70273e5a7d9b987bf8f.md",
+    "static/media/rs-lang.md": "/static/media/rs-lang.21c414d42cf01f460bf3.md",
+    "static/media/disney-toy-store.md": "/static/media/disney-toy-store.061fcf851858aef82aa3.md",
+    "static/media/async-race.md": "/static/media/async-race.683dde810434a319c60c.md",
+    "static/media/css-mem-slider.md": "/static/media/css-mem-slider.54ce218171b4212c4536.md",
+    "static/media/virtual-keyboard.md": "/static/media/virtual-keyboard.290762418a46c671f849.md",
+    "static/media/what-to-watch.md": "/static/media/what-to-watch.3a50d8ae26705808ac52.md",
+    "static/media/keksobooking.md": "/static/media/keksobooking.5f906fd818a7950cd49f.md",
     "index.html": "/index.html",
-    "main.3be3d149.css.map": "/static/css/main.3be3d149.css.map",
-    "main.47f770e3.js.map": "/static/js/main.47f770e3.js.map"
+    "static/media/react-sneakers.md": "/static/media/react-sneakers.e65b81844e30b660776d.md",
+    "static/media/cinemaddict.md": "/static/media/cinemaddict.1d757c532e657e3e3bd9.md",
+    "static/media/programmatic-lab.md": "/static/media/programmatic-lab.df97e3845ef43a300871.md",
+    "static/media/react-pizza.md": "/static/media/react-pizza.5b783f124121f79eadae.md",
+    "static/media/amarkets-10-years.md": "/static/media/amarkets-10-years.0ad2e83a0d296d85fc02.md",
+    "static/media/static-multi-page.md": "/static/media/static-multi-page.b4400811c3bee07e6b48.md",
+    "static/media/static.md": "/static/media/static.e6c1ed73777f901fabdc.md",
+    "static/media/landing-page.md": "/static/media/landing-page.0bbb553fa981801846dd.md",
+    "static/media/email.md": "/static/media/email.da59a28a371a8185321e.md",
+    "main.26708248.css.map": "/static/css/main.26708248.css.map",
+    "main.90596035.js.map": "/static/js/main.90596035.js.map"
   },
   "entrypoints": [
-    "static/css/main.3be3d149.css",
-    "static/js/main.47f770e3.js"
+    "static/css/main.26708248.css",
+    "static/js/main.90596035.js"
   ]
 }
