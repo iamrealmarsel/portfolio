@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.26708248.css",
+    "main.css": "/static/css/main.ff0ad5b5.css",
     "main.js": "/static/js/main.90596035.js",
     "static/media/shelter-cozy-house.md": "/static/media/shelter-cozy-house.a70273e5a7d9b987bf8f.md",
     "static/media/rs-lang.md": "/static/media/rs-lang.21c414d42cf01f460bf3.md",
@@ -20,11 +20,11 @@
     "static/media/static.md": "/static/media/static.e6c1ed73777f901fabdc.md",
     "static/media/landing-page.md": "/static/media/landing-page.0bbb553fa981801846dd.md",
     "static/media/email.md": "/static/media/email.da59a28a371a8185321e.md",
-    "main.26708248.css.map": "/static/css/main.26708248.css.map",
+    "main.ff0ad5b5.css.map": "/static/css/main.ff0ad5b5.css.map",
     "main.90596035.js.map": "/static/js/main.90596035.js.map"
   },
   "entrypoints": [
-    "static/css/main.26708248.css",
+    "static/css/main.ff0ad5b5.css",
     "static/js/main.90596035.js"
   ]
 }
