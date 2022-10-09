@@ -16,4 +16,4 @@ export const getWorkByTags = (workList, currentTags) => {
   return workByTag;
 };
 
-export const getWorkItem = (work, path) => work.find((item) => item.pathDescription === path);
+export const getWorkItemById = (work, id) => work.find((item) => item.id === id);

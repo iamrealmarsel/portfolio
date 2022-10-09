@@ -3,7 +3,7 @@ import { marked } from 'marked';
 import { useParams } from 'react-router-dom';
 import cn from './WorkCard.module.scss';
 import WorkContext from '../../store/WorkContext';
-import { getWorkItem } from '../../store/selectors';
+import { getWorkItemById } from '../../store/selectors';
 import Loader from '../Loader';
 import NotFound from '../NotFound';
 
@@ -12,22 +12,28 @@ const WorkCard = () => {
   const [postMarkDown, setPostMarkDown] = useState(null);
   const [loader, setLoader] = useState(true);
   const { param } = useParams();
-  const workItem = getWorkItem(workList, `/${param}`);
+  const workItem = getWorkItemById(workList, +param);
 
   useEffect(() => {
     (async () => {
       try {
-        const { default: url } = await import(/* webpackMode: "eager" */ `../../posts/${param}.md`);
-        const response = await fetch(url);
-        const post = await response.text();
-        setPostMarkDown(post);
+        const postFile = workItem?.srcDescription;
+
+        if (postFile) {
+          const { default: url } = await import(
+            /* webpackMode: "eager" */ `../../posts/${postFile}`
+          );
+          const response = await fetch(url);
+          const post = await response.text();
+          setPostMarkDown(post);
+        }
       } catch (error) {
         console.log(error);
       }
 
       setLoader(false);
     })();
-  }, [param]);
+  }, [workItem?.srcDescription]);
 
   const Content = () => {
     marked.setOptions({

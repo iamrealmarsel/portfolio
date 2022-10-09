@@ -17,7 +17,7 @@ const getDirection = (event, { width, height, x, y }) => {
   return Math.round(Math.atan2(mousePreviewCenterY, mousePreviewCenterX) / 1.57079633 + 5) % 4;
 };
 
-const WorkItem = ({ url, srcPreview, urlGithub, tags, pathDescription }) => {
+const WorkItem = ({ url, srcPreview, urlGithub, tags, id, srcDescription }) => {
   const previewRef = useRef(null);
   const overlayRef = useRef(null);
   let previewElement = null;
@@ -66,11 +66,8 @@ const WorkItem = ({ url, srcPreview, urlGithub, tags, pathDescription }) => {
             <div className={cn.info}>
               <div className={cn.tags}>{tags.join(', ')}</div>
             </div>
-            {pathDescription ? (
-              <Link
-                className={cn.linkPreview}
-                to={`${navigation.workCard.path}${pathDescription}`}
-              />
+            {srcDescription ? (
+              <Link className={cn.linkPreview} to={`${navigation.work.path}/${id}`} />
             ) : (
               <a className={cn.linkPreview} href={url} target='_blank' rel='noreferrer'>
                 link
@@ -84,11 +81,8 @@ const WorkItem = ({ url, srcPreview, urlGithub, tags, pathDescription }) => {
                 <a className={cn.linkWebsite} href={url} target='_blank' rel='noreferrer'>
                   <img src='img/icons/external-link.svg' alt='go to website' />
                 </a>
-                {pathDescription && (
-                  <Link
-                    className={cn.linkDescription}
-                    to={`${navigation.workCard.path}${pathDescription}`}
-                  >
+                {srcDescription && (
+                  <Link className={cn.linkDescription} to={`${navigation.work.path}/${id}`}>
                     <img src='img/icons/angle-right.svg' alt='go to description' />
                   </Link>
                 )}

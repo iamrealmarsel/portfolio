@@ -1,6 +1,7 @@
 import { useContext, useState } from 'react';
 import { getTags, getWorkByTags } from '../../store/selectors';
 import WorkContext from '../../store/WorkContext';
+import NotFound from '../NotFound';
 import Tags from './Tags';
 import WorkItem from './WorkItem';
 import cn from './WorkList.module.scss';
@@ -20,20 +21,27 @@ const WorkList = () => {
     }
   };
 
+  console.log(taggedWorkList);
+
   return (
     <>
       <Tags tags={tags} currentTags={currentTags} onTagClick={handleTagClick} />
       <div className={cn.workList}>
-        {taggedWorkList.map((workItem) => (
-          <WorkItem
-            key={workItem.id}
-            url={workItem.url}
-            srcPreview={workItem.srcPreview}
-            urlGithub={workItem.urlGithub}
-            tags={workItem.tags}
-            pathDescription={workItem.pathDescription}
-          />
-        ))}
+        {taggedWorkList.length === 0 ? (
+          <NotFound text='Nothing found' />
+        ) : (
+          taggedWorkList.map((workItem) => (
+            <WorkItem
+              key={workItem.id}
+              id={workItem.id}
+              url={workItem.url}
+              srcPreview={workItem.srcPreview}
+              urlGithub={workItem.urlGithub}
+              tags={workItem.tags}
+              srcDescription={workItem.srcDescription}
+            />
+          ))
+        )}
       </div>
     </>
   );

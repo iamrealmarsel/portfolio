@@ -9,12 +9,14 @@
 
 ## Стек
 
-- React
+- React (Create React App)
 - Redux Toolkit
 - React Router v6
 - TypeScript
 - SCSS modules
 - Eslint with Airbnb config
+- MongoDB + Heroku (backend)
+- Netlify (deploy)
 
 ## Структура приложения
 

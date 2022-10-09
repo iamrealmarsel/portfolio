@@ -1,9 +1,9 @@
 export const navigation = {
-  work: {
+  root: {
     name: 'Work',
     path: '/',
   },
-  workCard: {
+  work: {
     path: '/work',
   },
   about: {

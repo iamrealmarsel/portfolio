@@ -2,24 +2,15 @@ import { NavLink } from 'react-router-dom';
 import { navigation } from '../../helpers/constants';
 import cn from './Header.module.scss';
 
-const setActive = ({ isActive }) =>
-  isActive ? `${cn.link} ${cn.active}` : cn.link;
+const setActive = ({ isActive }) => (isActive ? `${cn.link} ${cn.active}` : cn.link);
 
 function Header() {
   return (
     <header className={cn.header}>
-      <NavLink
-        className={setActive}
-        to={navigation.work.path}
-        key={navigation.work.path}
-      >
-        {navigation.work.name}
+      <NavLink className={setActive} to={navigation.root.path} key={navigation.root.path}>
+        {navigation.root.name}
       </NavLink>
-      <NavLink
-        className={setActive}
-        to={navigation.about.path}
-        key={navigation.about.path}
-      >
+      <NavLink className={setActive} to={navigation.about.path} key={navigation.about.path}>
         {navigation.about.name}
       </NavLink>
       <a
