@@ -1,25 +1,31 @@
+import { marked } from 'marked';
+import { useState } from 'react';
 import cn from './AboutText.module.scss';
 
 const AboutText = () => {
+  const [html, setHtml] = useState('');
+
+  const fetchContent = async () => {
+    const { default: url } = await import(/* webpackMode: "eager" */ `./text.md`);
+    const response = await fetch(url);
+    const content = await response.text();
+
+    setHtml(marked.parse(content));
+  };
+
+  marked.setOptions({
+    breaks: true,
+  });
+
+  fetchContent();
+
   return (
     <div className={cn.container}>
-      <p className={cn.text}>Hello, world! 👋</p>
-      <p className={cn.text}>
-        I&apos;m Marsel and I like to study front-end development, design and also English 😅
-      </p>
-      <p className={cn.text}>
-        I have experience with HTML, CSS, Sass, BEM, Javascript, React, React Router, Redux, Canvas,
-        GSAP, Email coding, Webpack, Gulp, Git, Figma, Photoshop.
-      </p>
-      <p className={cn.text}>Get in touch 👇</p>
-      <a className={cn.link} href='https://t.me/iamrealmarsel' target='_blank' rel='noreferrer'>
-        <img src='img/icons/logo-telegram.svg' alt='' />
-        @iamrealmarsel
-      </a>
-      <a className={cn.link} href='mailto:iamrealmarsel@gmail.com'>
-        <img src='img/icons/logo-gmail.svg' alt='' />
-        iamrealmarsel@gmail.com
-      </a>
+      <h1 className={cn.title}>
+        <span className={cn.title_small}>Little man with </span>
+        <span className={cn.title_big}>big ambitions</span>
+      </h1>
+      <div className={cn.content} dangerouslySetInnerHTML={{ __html: marked.parse(html) }} />
     </div>
   );
 };
