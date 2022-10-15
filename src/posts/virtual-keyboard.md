@@ -1,6 +1,6 @@
 # Virtual Keyboard
 
-Bilingual virtual keyboard with typed text output
+Bilingual virtual keyboard with typed text output.
 
 ## My role
 
