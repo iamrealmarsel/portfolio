@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/static/css/main.c5c3828c.css",
-    "main.js": "/static/js/main.1d8d526a.js",
+    "main.js": "/static/js/main.da9b4a60.js",
     "static/media/shelter-cozy-house.md": "/static/media/shelter-cozy-house.a70273e5a7d9b987bf8f.md",
     "static/media/rs-lang.md": "/static/media/rs-lang.21c414d42cf01f460bf3.md",
     "static/media/disney-toy-store.md": "/static/media/disney-toy-store.85ccb2d5f1e400cd8f07.md",
     "static/media/async-race.md": "/static/media/async-race.683dde810434a319c60c.md",
-    "static/media/text.md": "/static/media/text.1eef667935735bd6f376.md",
+    "static/media/text.md": "/static/media/text.04723fe7e8558101c89f.md",
     "static/media/css-mem-slider.md": "/static/media/css-mem-slider.54ce218171b4212c4536.md",
     "static/media/virtual-keyboard.md": "/static/media/virtual-keyboard.c8c098ec3607add066c1.md",
     "static/media/what-to-watch.md": "/static/media/what-to-watch.3a50d8ae26705808ac52.md",
@@ -22,10 +22,10 @@
     "static/media/landing-page.md": "/static/media/landing-page.0bbb553fa981801846dd.md",
     "static/media/email.md": "/static/media/email.da59a28a371a8185321e.md",
     "main.c5c3828c.css.map": "/static/css/main.c5c3828c.css.map",
-    "main.1d8d526a.js.map": "/static/js/main.1d8d526a.js.map"
+    "main.da9b4a60.js.map": "/static/js/main.da9b4a60.js.map"
   },
   "entrypoints": [
     "static/css/main.c5c3828c.css",
-    "static/js/main.1d8d526a.js"
+    "static/js/main.da9b4a60.js"
   ]
 }

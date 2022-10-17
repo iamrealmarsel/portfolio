@@ -6,7 +6,7 @@ I studied computer science at university many years ago when the grass was green
 
 At first it was more like a hobby, but then it turned into a full-time job.
 
-At the moment, I have about half a year experience in front-end development (training projects and freelance) and about a year in HTML-development (commercial projects in a company).
+At the moment, I have over half a year experience in front-end development (mostly training projects) and over a year in HTML-coding (commercial projects).
 
 More than 5 training SPA projects 🗂 were developed - 4 of them using React, 3 of them using TypeScript.
 And more than 35 commercial static projects 💼 were HTML-developed - about 20 landing pages, about 10 multi-page sites, about 5 letters.
@@ -23,11 +23,11 @@ HTML, CSS, SCSS, BEM, Tea Drinking 🍵
 
 ### Intermediate knowledge 🥈
 
-Javascript, React, React Router, Redux Toolkit, Webpack, Git, Figma, Adobe Photoshop
+JavaScript, React, React Router, Redux Toolkit, Webpack, Git, Figma, Adobe Photoshop
 
 ### Basic knowledge 🥉
 
-TypeScript, OOP, Jest, Canvas, GSAP, React Material UI, Bootstrap, Email coding, Gulp, RESTful API. I also read about Data Structure and Design Patterns and solved several tasks on these topics on codewars.
+TypeScript, OOP, RESTful API, Jest, Canvas, GSAP, React Material UI, Bootstrap, Gulp, Eslint, Email-coding. I also read about Data Structure and Design Patterns and solved several tasks on these topics on codewars.
 
 By the way, I saw a codewars profile badges on many personal sites and github, so I'll put it here too. 💁‍♀️
 
@@ -45,7 +45,7 @@ Living without a goal is like being in a fog 🌫, not seeing anything around. I
 
 At the moment my main goals are:
 
-- Level up my skills above
+- Level up my current skills
 - Add knowledge of Feature-Sliced Design, Nextjs, GraphQL to current skills
 - Learn the basic backend - Nodejs, Expressjs, Mongodb
 - Learn English, at least to correctly write the text on this page 😀
